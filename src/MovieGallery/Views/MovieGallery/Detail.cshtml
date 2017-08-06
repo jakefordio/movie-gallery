@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+
+    var title = "Rogue One: A Star Wars Trilogy";
+    var rated = "PG-13";
+    var length = "2h 13m";
+    var plot = "<p><b>Plot</b>: In a time of conflict, a group of unlikely heroes band together on a mission to steal the plans to the Death Star, the Empire’s ultimate weapon of destruction. This key event in the Star Wars timeline brings together ordinary people who choose to do extraordinary things, and in doing so, become part of something greater than themselves.</p>";
+    var actors = new string[]
+    {
+        "Felicity Jones",
+        "Diego Luna",
+        "Alan Tudyk",
+        "Donnie Yen",
+        "Wen Jiang"
+    };
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@title</title>
+</head>
+<body>
+    <div style="width: 65%;">
+        <h2>@title</h2>
+        <h3>Rated: @rated</h3>
+        <h3>Length: @length</h3>
+        <div>@Html.Raw(plot)</div>
+
+        @if (actors.Length > 0)
+        {
+            <h2>Actors</h2>
+                <ul>
+                    @for (int i = 0; i < actors.Length; i++)
+                    {
+                        <li>@actors[i]</li>
+                    }
+                </ul>
+        }
+    </div>
+</body>
+</html>

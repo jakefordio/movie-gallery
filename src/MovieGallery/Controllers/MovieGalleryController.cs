@@ -10,12 +10,7 @@ namespace MovieGallery.Controllers
     {   //Action methods need to be public for MVC to find and use them!
         public ActionResult Detail()
         {
-            if(DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
-            {
-                return Redirect("/");
-            }
-
-            return Content("What's up mother fucker!");
+            return View();
         }
     }
 }
