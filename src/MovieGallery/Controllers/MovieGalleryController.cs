@@ -8,9 +8,14 @@ namespace MovieGallery.Controllers
 {   //Controller classes need to be public for MVC to use them!
     public class MovieGalleryController : Controller
     {   //Action methods need to be public for MVC to find and use them!
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Welcome to the mother fucking movie gallery bitch.";
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return Redirect("/");
+            }
+
+            return Content("What's up mother fucker!");
         }
     }
 }
