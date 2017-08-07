@@ -1,31 +1,20 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Movie Gallery";
 }
 
-<!DOCTYPE html>
+<h2>@ViewBag.Title</h2>
+<h3>Rated: @ViewBag.Rated</h3>
+<h3>Length: @ViewBag.Length</h3>
+<div>@Html.Raw(ViewBag.Plot)</div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-</head>
-<body>
-    <div style="width: 65%;">
-        <h2>@ViewBag.Title</h2>
-        <h3>Rated: @ViewBag.Rated</h3>
-        <h3>Length: @ViewBag.Length</h3>
-        <div>@Html.Raw(ViewBag.Plot)</div>
-
-        @if (ViewBag.Actors.Length > 0)
-        {
-            <h2>Actors</h2>
-                <ul>
-                    @for (int i = 0; i < ViewBag.Actors.Length; i++)
-                    {
-                        <li>@ViewBag.Actors[i]</li>
-                    }
-                </ul>
-        }
-    </div>
-</body>
-</html>
+@if (ViewBag.Actors.Length > 0)
+{
+    <h2>Actors</h2>
+        <ul>
+            @for (int i = 0; i < ViewBag.Actors.Length; i++)
+            {
+                <li>@ViewBag.Actors[i]</li>
+            }
+        </ul>
+}
