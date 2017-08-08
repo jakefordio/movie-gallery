@@ -13,5 +13,23 @@ namespace MovieGallery.Models
         string Length { get; set; }
         string PlotHtml { get; set; }
         string[] Actors { get; set; }
+
+        public string displayText
+        {
+            get
+            {
+                return Id + " - " + Title;
+            }
+        }
+
+        public string CoverImageFileName
+        {
+            get
+            {
+                return Title.Replace(" ", "-").ToLower() + "-" + Id;
+            }
+        }
     }
+
+
 }
