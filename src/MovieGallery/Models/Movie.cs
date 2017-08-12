@@ -7,14 +7,14 @@ namespace MovieGallery.Models
 {
     public class Movie
     {
-        string Id { get; set; }
-        string Title { get; set; }
-        string Rated { get; set; }
-        string Length { get; set; }
-        string PlotHtml { get; set; }
-        string[] Actors { get; set; }
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public string Rated { get; set; }
+        public string Length { get; set; }
+        public string PlotHtml { get; set; }
+        public string[] Actors { get; set; }
 
-        public string displayText
+        public string DisplayText
         {
             get
             {
@@ -26,10 +26,8 @@ namespace MovieGallery.Models
         {
             get
             {
-                return Title.Replace(" ", "-").ToLower() + "-" + Id;
+                return Title.Replace(" ", "-").ToLower() + "-" + Id + ".jpg";
             }
         }
     }
-
-
 }

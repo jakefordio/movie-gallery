@@ -1,20 +1,33 @@
-﻿@{
+﻿@model MovieGallery.Models.Movie
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Movie Gallery";
 }
+<h2>@Model.DisplayText</h2>
 
-<h2>@ViewBag.Title</h2>
-<h3>Rated: @ViewBag.Rated</h3>
-<h3>Length: @ViewBag.Length</h3>
-<div>@Html.Raw(ViewBag.Plot)</div>
-
-@if (ViewBag.Actors.Length > 0)
-{
-    <h2>Actors</h2>
-        <ul>
-            @for (int i = 0; i < ViewBag.Actors.Length; i++)
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Movie ID:&nbsp;</label>@Model.Id</h5>
+            <h5><label>Movie Title:&nbsp;</label>@Model.Title</h5>
+            <h5><label>Rated:&nbsp;</label>@Model.Rated</h5>
+            <h5><label>Length:&nbsp;</label>@Model.Length</h5>
+            @if (Model.Actors.Length > 0)
             {
-                <li>@ViewBag.Actors[i]</li>
+                <h5>Actors</h5>
+                <ul>
+                    @for (int i = 0; i < Model.Actors.Length; i++)
+                    {
+                        <li>@Model.Actors[i]</li>
+                    }
+                </ul>
             }
-        </ul>
-}
+            </div>
+            <p>@Html.Raw(Model.PlotHtml)</p>
+    </div>
+    <div class="col-md-6">
+        <img src="/Images/@Model.CoverImageFileName"
+             alt="@Model.DisplayText" class="img-responsive" />
+    </div>
+</div>
+
