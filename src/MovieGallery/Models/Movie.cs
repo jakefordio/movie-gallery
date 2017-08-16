@@ -7,7 +7,7 @@ namespace MovieGallery.Models
 {
     public class Movie
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Rated { get; set; }
         public string Length { get; set; }
