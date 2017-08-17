@@ -78,5 +78,10 @@ namespace MovieGallery.Data
             }
             return movieToReturn;
         }
+
+        public Movie[] GetMovies()
+        {
+            return _movies;
+        }
     }
 }
